@@ -1,0 +1,10 @@
+.trendBody{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.trendGifImages{
+width: 50%;
+height: 50%;
+}
