@@ -21,7 +21,6 @@ const fetchGif = () => {
     axios.get(`http://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=20&rating=g`)
     .then(res => {
       setTrendingGif(res.data.data)
-      // console.log(res)
     })
     .catch(err => {
       console.log(err)
@@ -31,8 +30,8 @@ const fetchGif = () => {
         <div className={styles.trendBody}>
             <div className={styles.innerTrend}>
             {trendingGif.map((trendGif) => (
-                <div>
-                <img className={styles.trendGifImages} src={trendGif.images.downsized.url} alt="gif"></img>
+                <div key={trendGif.id}>
+                <img key={trendGif.id} className={styles.trendGifImages} src={trendGif.images.downsized.url} alt="gif"></img>
                 </div>
             ))}
             </div>

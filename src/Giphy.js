@@ -8,7 +8,7 @@ const Giphy = ({gifs, isLoading}) => {
     (<div className={styles.body}>
     <div className={styles.cards}>
         {gifs.map((gif) => (
-            <img className={styles.image} src={gif.images.downsized.url} alt="gif"></img>
+            <img key={gif.id} className={styles.image} src={gif.images.downsized.url} alt="gif"></img>
         ))}
         
          </div> 

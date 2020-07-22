@@ -50,7 +50,7 @@ function Header() {
         </div>
         <div className>
                 
-        <Giphy isLoading={isLoading} gifs={searchGif}/>
+        <Giphy key={searchGif.id} isLoading={isLoading} gifs={searchGif}/>
      </div>
      </div>
     )
