@@ -8,13 +8,13 @@ function Header() {
     const API_KEY='h90vPPpGqNIgpsC4sv90L44Q9dlW3r0y';
     const [searchGif,setSearchGif] = useState([]);
     const [isLoading,setIsLoading] = useState(true)
-    const [query,setQuery] = useState('random');
+    const [query,setQuery] = useState('');
     const [search,setSearch] = useState('')
 
 
     useEffect(() => {
         searchGifs()
-    },[query])
+    })
 
     const searchGifs= () => {
         axios.get(`http://api.giphy.com/v1/gifs/search?q=${query}&api_key=${API_KEY}&limit=20`)
@@ -48,7 +48,7 @@ function Header() {
             </div>
             
         </div>
-        <div className>
+        <div>
                 
         <Giphy key={searchGif.id} isLoading={isLoading} gifs={searchGif}/>
      </div>
