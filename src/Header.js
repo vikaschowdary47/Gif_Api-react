@@ -41,7 +41,7 @@ function Header() {
             </div>
             <div className={styles.form}>
                 <form onSubmit={submitSearch}>
-                    <input type="text" className={styles.inputSearch} value={search} onChange={(e)=>{setSearch(e.target.value)}}/>
+                    <input type="text" placeholder="Search your gifs" className={styles.inputSearch} value={search} onChange={(e)=>{setSearch(e.target.value)}}/>
                     <button className={styles.button} type="submit">Search</button>
 
                 </form>
