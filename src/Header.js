@@ -8,7 +8,7 @@ function Header() {
     const API_KEY='h90vPPpGqNIgpsC4sv90L44Q9dlW3r0y';
     const [searchGif,setSearchGif] = useState([]);
     const [isLoading,setIsLoading] = useState(true)
-    const [query,setQuery] = useState('');
+    const [query,setQuery] = useState('random');
     const [search,setSearch] = useState('')
 
 

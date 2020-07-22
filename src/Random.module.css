@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+    /* width: 50%; */
 }
 
 .images{
@@ -11,10 +12,9 @@ height: 200px;
 
 }
 
-/* .grid{
-    display: grid;
-    grid-template-columns: 200px 200px 200px 200px 200px;
-    grid-template-rows: 200px 200px ;
-    grid-gap: 20px;
-    
-} */
+@media only screen and (max-width:1000px){
+    .images{
+        width:100p;
+        height: 100px;
+    }
+}

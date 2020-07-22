@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap');
+
+
 body{
     margin:0;
     padding: 0;
@@ -7,4 +10,16 @@ body{
     width: 85%;
     min-height: 100vh;
     margin: auto;
+}
+footer{
+    color: white;
+    /* margin-top: auto; */
+    width: 100%;
+    font-weight: 25px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
 }

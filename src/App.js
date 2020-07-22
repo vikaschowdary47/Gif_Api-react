@@ -11,7 +11,11 @@ function App() {
         <Header />
         <Trending/>
         <Random />
+        <footer>
+        Vikas Chowdary
+      </footer>
       </div>
+      
     </div>
   );
 }

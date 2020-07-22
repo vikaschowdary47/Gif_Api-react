@@ -5,8 +5,6 @@
 }
 
 .trendGifImages{
-/* width: 50%;
-height: 50%; */
 width: 100%;
 height: 100%;
 
@@ -18,4 +16,15 @@ height: 100%;
     grid-template-rows: 200px 200px ;
     grid-gap: 20px;
     
+}
+
+@media only screen and (max-width:1000px){
+    .innerTrend{
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 100px 100px 100px 100px ;
+       }
+
+       .trendBody{
+           margin-top: -100px;
+       }
 }
