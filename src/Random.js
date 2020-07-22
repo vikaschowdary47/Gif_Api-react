@@ -3,6 +3,7 @@ import styles from './Random.module.css'
 
 function Random() {
     const [random,setRandom] = useState([])
+    const API_KEY = 'h90vPPpGqNIgpsC4sv90L44Q9dlW3r0y'
 
     useEffect(() => {
             randomGifs();
@@ -10,7 +11,7 @@ function Random() {
 
 
     const randomGifs = async () => {
-       const response = await  fetch("https://api.giphy.com/v1/gifs/random?api_key=h90vPPpGqNIgpsC4sv90L44Q9dlW3r0y&tag=&rating=g")
+       const response = await  fetch(`https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}&tag=&rating=`)
         const data = await response.json();
 
         setRandom(data.data.images.downsized)
