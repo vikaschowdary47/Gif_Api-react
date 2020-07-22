@@ -15,7 +15,7 @@ useEffect(() => {
 
 
 const fetchGif = () => {
-    axios.get(`http://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=10&rating=g`)
+    axios.get(`http://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=20&rating=g`)
     .then(res => {
       setTrendingGif(res.data.data)
     //   setIsLoading(false)

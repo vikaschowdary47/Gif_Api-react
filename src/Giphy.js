@@ -1,11 +1,15 @@
 import React from 'react'
 import styles from './Giphy.module.css'
 
-const Giphy = () => {
+const Giphy = ({gifs, isLoading}) => {
     
-    <div className={styles.cards}> 
-<h1>giphy</h1>
-</div> 
+    return isLoading ? (<h1>loading...</h1>) : 
+    (<div className={styles.cards}>
+        {gifs.map((gif) => (
+            <img src={gif.images.downsized.url} alt="gif"></img>
+        ))}
+        
+         </div> )
 }
 
 export default Giphy

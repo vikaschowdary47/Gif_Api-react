@@ -1,11 +1,13 @@
 import React,{useState, useEffect} from 'react'
 import styles from './Header.module.css'
-import axios from 'axios';
+import axios from 'axios'
+import Giphy from './Giphy'
 
 
 function Header() {
     const API_KEY='h90vPPpGqNIgpsC4sv90L44Q9dlW3r0y';
     const [searchGif,setSearchGif] = useState([]);
+    const [isLoading,setIsLoading] = useState(true)
     const [query,setQuery] = useState('');
     const [search,setSearch] = useState('')
 
@@ -17,8 +19,9 @@ function Header() {
     const searchGifs= () => {
         axios.get(`http://api.giphy.com/v1/gifs/search?q=${query}&api_key=${API_KEY}&limit=5`)
         .then(res => {
-            setSearchGif(res.data)
-            // console.log(res.data)
+            setSearchGif(res.data.data)
+            setIsLoading(false)
+            console.log(res.data.data)
         })
         .catch(err => {
             console.log(err)
@@ -42,6 +45,10 @@ function Header() {
                     <button className={styles.button} type="submit">Search</button>
 
                 </form>
+            </div>
+            <div className>
+                
+                    <Giphy isLoading={isLoading} gifs={searchGif}/>
             </div>
         </div>
     )
