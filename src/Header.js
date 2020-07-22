@@ -2,6 +2,7 @@ import React,{useState, useEffect} from 'react'
 import styles from './Header.module.css'
 import axios from 'axios';
 
+
 function Header() {
     const API_KEY='h90vPPpGqNIgpsC4sv90L44Q9dlW3r0y';
     const [searchGif,setSearchGif] = useState([]);
@@ -31,10 +32,14 @@ function Header() {
 
     return (
         <div className={styles.header}>
+        
             <div>
+                <img className={styles.logo} src={require("./images/logo.png")} />
+            </div>
+            <div className={styles.form}>
                 <form onSubmit={submitSearch}>
                     <input type="text" className={styles.inputSearch} value={search} onChange={(e)=>{setSearch(e.target.value)}}/>
-                    <button className={styles.button} type="submit">search</button>
+                    <button className={styles.button} type="submit">Search</button>
 
                 </form>
             </div>
