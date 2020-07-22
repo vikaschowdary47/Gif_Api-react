@@ -31,11 +31,13 @@ const fetchGif = () => {
   }
     return (
         <div className={styles.trendBody}>
+            <div className={styles.innerTrend}>
             {trendingGif.map((trendGif) => (
                 <div>
                 <img className={styles.trendGifImages} src={trendGif.images.downsized.url} alt="gif"></img>
                 </div>
             ))}
+            </div>
         </div>
     )
 }
