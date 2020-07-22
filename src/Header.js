@@ -17,11 +17,10 @@ function Header() {
     },[query])
 
     const searchGifs= () => {
-        axios.get(`http://api.giphy.com/v1/gifs/search?q=${query}&api_key=${API_KEY}&limit=5`)
+        axios.get(`http://api.giphy.com/v1/gifs/search?q=${query}&api_key=${API_KEY}&limit=20`)
         .then(res => {
             setSearchGif(res.data.data)
             setIsLoading(false)
-            console.log(res.data.data)
         })
         .catch(err => {
             console.log(err)
@@ -31,13 +30,14 @@ function Header() {
     const submitSearch = e => {
         e.preventDefault();
         setQuery(search);
+        setSearch('')
     }
 
     return (
+        <div >
         <div className={styles.header}>
-        
-            <div>
-                <img className={styles.logo} src={require("./images/logo.png")} />
+         <div>
+                <img className={styles.logo} src={require("./images/logo.png")} alt='gif' />
             </div>
             <div className={styles.form}>
                 <form onSubmit={submitSearch}>
@@ -46,11 +46,13 @@ function Header() {
 
                 </form>
             </div>
-            <div className>
-                
-                    <Giphy isLoading={isLoading} gifs={searchGif}/>
-            </div>
+            
         </div>
+        <div className>
+                
+        <Giphy isLoading={isLoading} gifs={searchGif}/>
+     </div>
+     </div>
     )
 }
  

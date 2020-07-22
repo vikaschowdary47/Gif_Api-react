@@ -1,7 +1,7 @@
 .header{
-    height:200px;
+    height:100px;
     width: 100%;
-    margin-bottom: 100px;
+    margin-bottom: 120px;
     display: flex;
     
 }
@@ -12,8 +12,10 @@
 }
 
 .form{
+    display: flex;
+    flex-direction: row-reverse;
     margin-top: 100px;
-    margin-left:auto ;
+    margin-left:100px ;
     margin-right: auto;
 }
 

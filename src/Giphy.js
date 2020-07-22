@@ -1,15 +1,18 @@
 import React from 'react'
 import styles from './Giphy.module.css'
+import Spinner from './Spinner'
 
 const Giphy = ({gifs, isLoading}) => {
     
-    return isLoading ? (<h1>loading...</h1>) : 
-    (<div className={styles.cards}>
+    return isLoading ? (<Spinner />) : 
+    (<div className={styles.body}>
+    <div className={styles.cards}>
         {gifs.map((gif) => (
-            <img src={gif.images.downsized.url} alt="gif"></img>
+            <img className={styles.image} src={gif.images.downsized.url} alt="gif"></img>
         ))}
         
-         </div> )
+         </div> 
+         </div>)
 }
 
 export default Giphy
