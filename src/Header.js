@@ -1,6 +1,5 @@
 import React,{useState, useEffect} from 'react'
 import styles from './Header.module.css'
-import axios from 'axios'
 import Giphy from './Giphy'
 
 
@@ -8,7 +7,7 @@ function Header() {
     const API_KEY='h90vPPpGqNIgpsC4sv90L44Q9dlW3r0y';
     const [searchGif,setSearchGif] = useState([]);
     const [isLoading,setIsLoading] = useState(true)
-    const [query,setQuery] = useState('');
+    const [query,setQuery] = useState('funny');
     const [search,setSearch] = useState('')
 
 
@@ -16,16 +15,24 @@ function Header() {
         searchGifs()
     })
 
-    const searchGifs= () => {
-        axios.get(`http://api.giphy.com/v1/gifs/search?q=${query}&api_key=${API_KEY}&limit=20`)
-        .then(res => {
-            setSearchGif(res.data.data)
+    const searchGifs= async () => {
+        const response = await fetch(`http://api.giphy.com/v1/gifs/search?q=${query}&api_key=${API_KEY}&limit=20`)
+        const data = await response.json();
+        setSearchGif(data.data)
             setIsLoading(false)
-        })
-        .catch(err => {
-            console.log(err)
-        })
+        
+        
+        
+        // .then(res => {
+            
+        // .catch(err => {
+        //     console.log(err)
+        // })
     }
+
+
+
+
 
     const submitSearch = e => {
         e.preventDefault();

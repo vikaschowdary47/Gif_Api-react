@@ -1,6 +1,5 @@
 import React,{useState, useEffect} from 'react'
 import styles from './Trending.module.css'
-import axios from 'axios'
 
 function Trending() {
 
@@ -17,14 +16,11 @@ useEffect(() => {
 
 
 
-const fetchGif = () => {
-    axios.get(`http://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=20&rating=g`)
-    .then(res => {
-      setTrendingGif(res.data.data)
-    })
-    .catch(err => {
-      console.log(err)
-    })
+const fetchGif = async () => {
+    const response = await fetch(`http://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=20&rating=g`)
+    
+    const data = await response.json();
+    setTrendingGif(data.data)
   }
     return (
         <div className={styles.trendBody}>
