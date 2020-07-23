@@ -19,7 +19,7 @@ function Header() {
     },[])
 
     const searchGifs= async () => {
-        const response = await fetch(`http://api.giphy.com/v1/gifs/search?q=${query}&api_key=${API_KEY}&limit=18`)
+        const response = await fetch(`https://api.giphy.com/v1/gifs/search?q=${query}&api_key=${API_KEY}&limit=18`)
         const data = await response.json();
         setSearchGif(data.data)
         setIsLoading(false)
