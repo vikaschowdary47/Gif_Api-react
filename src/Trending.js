@@ -18,7 +18,6 @@ useEffect(() => {
 
 const fetchGif = async () => {
     const response = await fetch(`http://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=18&rating=g`)
-    
     const data = await response.json();
     setTrendingGif(data.data)
   }

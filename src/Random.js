@@ -13,7 +13,6 @@ function Random() {
     const randomGifs = async () => {
        const response = await  fetch(`https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}&tag=&rating=g`)
         const data = await response.json();
-
         setRandom(data.data.images.downsized)
     }
 
